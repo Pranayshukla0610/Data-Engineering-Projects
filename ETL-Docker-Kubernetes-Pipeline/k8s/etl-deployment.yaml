@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: etl-deployment
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: etl
+
+  template:
+    metadata:
+      labels:
+        app: etl
+
+    spec:
+      containers:
+        - name: etl-container
+
+          image: etl-pipeline:v1
+
+          imagePullPolicy: Never
+
+          env:
+            - name: POSTGRES_USER
+              value: postgres
+
+            - name: POSTGRES_PASSWORD
+              value: postgres
+
+            - name: POSTGRES_DB
+              value: etl_db
+
+            - name: POSTGRES_HOST
+              value: postgres-service
+
+            - name: POSTGRES_PORT
+              value: "5432"

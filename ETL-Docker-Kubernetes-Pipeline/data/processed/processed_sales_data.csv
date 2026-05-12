@@ -1,0 +1,6 @@
+order_id,customer_name,product,quantity,price,total_sales
+1,PRANAY,Laptop,2,70000,140000
+2,RAHUL,Mouse,5,500,2500
+3,AMAN,Keyboard,3,1500,4500
+4,SNEHA,Monitor,1,12000,12000
+5,RIYA,Headphones,4,2000,8000
